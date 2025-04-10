@@ -85,7 +85,7 @@ Los archivos estarán disponibles en la carpeta `dist/pokemon-app/`.
    - **Build Command**: `npm install && npm run build`
    - **Publish Directory**: `dist/pokemon-app`
 5. Haga clic en "Create Static Site"
-6. La aplicación estará disponible en una URL como `https://pokemon-app.onrender.com`
+6. La aplicación estará disponible en una URL como `https://pokemon-app-m5n8.onrender.com/`
 
 ## Pruebas
 
