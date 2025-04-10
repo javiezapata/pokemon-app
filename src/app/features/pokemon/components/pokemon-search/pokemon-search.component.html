@@ -1,0 +1,18 @@
+<div class="search-container">
+    <div class="search-type-toggle">
+      <button [class.active]="searchType === 'id'" (click)="changeSearchType('id')">Buscar por ID</button>
+      <button [class.active]="searchType === 'name'" (click)="changeSearchType('name')">Buscar por Nombre</button>
+    </div>
+    
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+      <div class="search-input">
+        <input
+          type="text"
+          formControlName="searchTerm"
+          [placeholder]="searchType === 'id' ? 'Ingrese ID del Pokémon' : 'Ingrese nombre del Pokémon'"
+          [type]="searchType === 'id' ? 'number' : 'text'"
+        />
+        <button type="submit" [disabled]="searchForm.invalid">Buscar</button>
+      </div>
+    </form>
+  </div>

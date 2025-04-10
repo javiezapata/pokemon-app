@@ -1,0 +1,41 @@
+<div class="pokemon-card" *ngIf="!loading && !error && pokemon">
+    <div class="pokemon-header">
+      <h2>#{{pokemon.id}} {{pokemon.name | titlecase}}</h2>
+    </div>
+    
+    <div class="pokemon-image">
+      <img [src]="pokemon.sprite_url" [alt]="pokemon.name">
+    </div>
+    
+    <div class="pokemon-info">
+      <div class="types">
+        <h3>Tipos:</h3>
+        <div class="type-list">
+          <span class="type-badge" *ngFor="let type of pokemon.types">
+            {{type | titlecase}}
+          </span>
+        </div>
+      </div>
+      
+      <div class="abilities">
+        <h3>Habilidades:</h3>
+        <ul>
+          <li *ngFor="let ability of pokemon.abilities">
+            {{ability | titlecase}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="loading" *ngIf="loading">
+    <p>Cargando información del Pokémon...</p>
+  </div>
+  
+  <div class="error-message" *ngIf="error">
+    <p>{{error}}</p>
+  </div>
+  
+  <div class="empty-state" *ngIf="!loading && !error && !pokemon">
+    <p>Busca un Pokémon para ver su información</p>
+  </div>

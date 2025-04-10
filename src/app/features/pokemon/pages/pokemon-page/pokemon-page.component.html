@@ -1,0 +1,19 @@
+<div class="pokemon-container">
+    <h1>Buscador de Pokémon</h1>
+    
+    <app-pokemon-search 
+      (searchById)="searchPokemonById($event)"
+      (searchByName)="searchPokemonByName($event)">
+    </app-pokemon-search>
+    
+    <app-pokemon-detail 
+      [pokemon]="pokemon"
+      [loading]="loading"
+      [error]="error">
+    </app-pokemon-detail>
+    
+    <div class="pagination" *ngIf="pokemon">
+      <button (click)="previousPokemon()" [disabled]="currentId <= 1">Anterior</button>
+      <button (click)="nextPokemon()">Siguiente</button>
+    </div>
+  </div>

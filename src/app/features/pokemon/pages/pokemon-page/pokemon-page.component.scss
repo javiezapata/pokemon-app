@@ -1,0 +1,25 @@
+.pokemon-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    
+    h1 {
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .pagination {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      
+      button {
+        min-width: 100px;
+        
+        &:first-child {
+          background-color: var(--secondary-color);
+        }
+      }
+    }
+  }
